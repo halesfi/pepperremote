@@ -1,6 +1,8 @@
 # Pepper Remote
 simple remote for Pepper
 
+Developed at [NLP Centre](https://nlp.fi.muni.cz/en), [FI MU](https://www.fi.muni.cz/index.html.en) for [Karel Pepper](https://nlp.fi.muni.cz/trac/pepper)
+
 ## Installation
 
 * log to the robot via `ssh`
