@@ -22,6 +22,8 @@ Developed at [NLP Centre](https://nlp.fi.muni.cz/en), [FI MU](https://www.fi.mun
   
   ## Adaptations
   
+  ![remote](screenshot.png)
+  
   The buttons are indetified via their `id` and `label`:
   ```
   BUTTONS = {
