@@ -111,6 +111,7 @@ class RemoteModule(object):
         elif action == "turnright": motion_theta = -0.5
         if self.qi_disabled:
             return ("{} (robot not connected)".format(action))
+        self.motion.moveInit();
         self.motion.moveToward(motion_x, motion_y, motion_theta)
         say_text = action
         if action == "setcz":
