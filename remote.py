@@ -92,6 +92,8 @@ class RemoteModule(object):
                 self.motion = session.service("ALMotion")
                 self.dialog = session.service("ALDialog")
                 self.aware = session.service("ALBasicAwareness")
+                self.amoves = session.service("ALAutonomousMoves")
+                self.posture = session.service("ALRobotPosture")
             except:
                 self.qi_disabled = True
 
@@ -127,10 +129,15 @@ class RemoteModule(object):
             elif action == "English":
                 say_text = "Now I have English"
         elif action == "aon":
+            self.amoves.setBackgroundStrategy("backToNeutral")
             self.aware.setEnabled(True)
+            self.posture.stopMove()
             say_text = "Awarness on"
         elif action == "aoff":
             self.aware.setEnabled(False)
+            self.amoves.setBackgroundStrategy("none")
+            self.posture.setMaxTryNumber(3)
+            self.posture.goToPosture("Stand", 0.8)
             say_text = "Awarness off"
         self.tts.say(say_text)
         return (action)
